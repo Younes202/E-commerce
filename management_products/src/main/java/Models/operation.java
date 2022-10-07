@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class operation {
-	
+
 	ArrayList<product> products = new ArrayList<product>();
-	
-	
+	product foundproduct;
+
 	public ArrayList<product> getProducts() {
 		return products;
 	}
@@ -36,7 +36,24 @@ public class operation {
 		return products;
 	}
 	
+	public void Search(long id) {
+			for(product p:products)
+			{
+				if(p.getId()==id)
+				{
+					foundproduct=p;
+					break;
+				}
+			}
+			if(foundproduct!=null)
+			
+				System.out.println("The product is found " +foundproduct.getName());
+			
+			else
+				System.out.println("The product isn't find ");		
+			
+	}
 	
 	
-
+	
 }

@@ -5,8 +5,14 @@ public class product {
 	private String name;
 	private String desc;
 	private float price;
-	private  int etat;
-	public product(long id, String name, String desc, float price, int etat) {
+	private  float etat;
+	
+	public product() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public product(long id, String name, String desc, float price, float etat) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -14,35 +20,47 @@ public class product {
 		this.price = price;
 		this.etat = etat;
 	}
-	public product() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+
 	public long getId() {
 		return id;
 	}
+
 	public void setId(long id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public String getDesc() {
+		return desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+
 	public float getPrice() {
 		return price;
 	}
+
 	public void setPrice(float price) {
 		this.price = price;
 	}
-	public int getEtat() {
+
+	public float getEtat() {
 		return etat;
 	}
-	public void setEtat(int etat) {
+
+	public void setEtat(float etat) {
 		this.etat = etat;
 	}
-	
+
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub

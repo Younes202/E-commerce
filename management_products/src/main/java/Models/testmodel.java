@@ -14,13 +14,16 @@ public class testmodel {
 			list.add(new product(5,"tide5","desc5",175,5));
 			
 			
-			
+			list.remove(3);
 			Iterator<product> prds = list.getAll().iterator(); // iterator is a list that remove the latest iteration when we loop in the list is the best of the memory
 			while(prds.hasNext())
 			{
 				product prd = prds.next();
 				prd.show();
 			}
-			
+			list.Search(10);
+
 		}
+
+		
 }
