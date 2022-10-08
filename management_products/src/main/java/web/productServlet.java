@@ -21,10 +21,14 @@ public class productServlet extends HttpServlet {
 	
 
 	private 	operation op ;
+	private int id;
+
 	@Override
 	public void init() throws ServletException {
 		// TODO Auto-generated method stub
 		op = new operation();
+		id=1;
+		
 	}
     /**
      * @see HttpServlet#HttpServlet()
@@ -48,6 +52,8 @@ public class productServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+	
+		
 		String name = request.getParameter("name");
 		request.setAttribute("name", name);
 		String desc = request.getParameter("desc");
@@ -58,7 +64,7 @@ public class productServlet extends HttpServlet {
 
 		String etat = request.getParameter("etat");
 		request.setAttribute("etat", etat);
-		product product = new product(1,name,desc,Integer.parseInt(price),Integer.parseInt(etat));
+		product product = new product(id++,name,desc,Integer.parseInt(price),Integer.parseInt(etat));
 		productBeans prb = new productBeans();
 		op.add(product);
 		prb.setList(op.getAll());

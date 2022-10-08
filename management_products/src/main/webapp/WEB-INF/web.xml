@@ -19,4 +19,14 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>productServlet_2</display-name>
+    <servlet-name>productServlet_2</servlet-name>
+    <servlet-class>web.productServlet_2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>productServlet_2</servlet-name>
+    <url-pattern>/productServlet_2</url-pattern>
+  </servlet-mapping>
 </web-app>
