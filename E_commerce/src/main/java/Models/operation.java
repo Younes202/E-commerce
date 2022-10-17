@@ -37,6 +37,24 @@ public class operation {
 		//products.add(p);
 	}
 	
+	public void Display(){
+	try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/E_commerce","root","missour.1422");
+			Statement st = con.craeteStatement();
+			ResultSet res = st.execute.Query("select *from products"); 
+			
+			st.execute();
+			con.close();
+
+			} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//products.add(p);
+	
+	}
+	
 	public void remove(long id) {
 		for(product p:products)
 		{
