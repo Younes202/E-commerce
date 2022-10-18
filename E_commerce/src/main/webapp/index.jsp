@@ -78,6 +78,7 @@
                     <th>Designation</th>
                     <th >Price</th>
                     <th>etat</th>
+		    <th>Option</th>
                 </thead>
                 
             <c:set  var="list" value="${products.getList().iterator()}"/>
@@ -89,6 +90,16 @@
        			  <td>${li.desc}</td>
        			  <td>${li.price}</td>
        			  <td>${li.etat}</td>
+			  <td>
+				  <form action="" method="post">
+				  
+				  <input type="hidden" name="id" value="${li.getId()}"/>
+			          <input type="hidden" name="action" value="delete"/>
+			          <input type="submit" class="btn btn-danger" value="Delete"/>
+					  
+				  </form>
+				
+				</td>
        			                  </tbody>
        			  
        			  
