@@ -20,8 +20,7 @@ public class productServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 
-	private 	operation op ;
-
+/*
 	@Override
 	public void init() throws ServletException {
 		// TODO Auto-generated method stub
@@ -51,6 +50,12 @@ public class productServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 	
+		operation op = new operation(); 
+		if(request.getParameter("action")!=null) {
+			op.remove(Long.parseLong(request.getParameter("id")));
+		}
+		else{
+		
 		
 		String name = request.getParameter("name");
 		request.setAttribute("name", name);
@@ -62,12 +67,10 @@ public class productServlet extends HttpServlet {
 
 		String etat = request.getParameter("etat");
 		request.setAttribute("etat", etat);
-		product product = new product(1L,name,desc,Float.parseFloat(price),Integer.parseInt(etat));
-		op.adding(product);
+		op.adding(new product(1L,name,desc,Float.parseFloat(price),Integer.parseInt(etat)));
+		}
 		productBeans prb = new productBeans();
 		request.setAttribute("prb", prb);
-
-		
 		this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
 
 
