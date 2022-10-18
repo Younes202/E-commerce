@@ -56,14 +56,17 @@ public class operation {
 	}
 	
 	public void remove(long id) {
-		for(product p:products)
-		{
-			if(p.getId()==id)
-			{
-				products.remove(p);
-				break;
-			}	
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/E_commerce","root","missour.1422");
+			PreparedStatement st = con.prepareStatement("delete from products where id=?);
+			st.setLong(1, id);
+			st.executeUpdate();
+			} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		//products.add(p);
 	}
 	public 	ArrayList<product> getAll() {
 		
