@@ -68,6 +68,24 @@ public class operation {
 		}
 		//products.add(p);
 	}
+								    
+								    
+	   public static void Update(product new_data,String name_up) {
+        try {
+     		Class.forName("com.mysql.cj.jdbc.Driver"); 
+     		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Personne","root","");
+     		PreparedStatement st = con.prepareStatement("updtae personne set Name =? , LastName =? , Phone=?,Age=?  where Name = name_up");
+     		st.setString(1,new_data.Name);
+     		st.setString(2,new_data.desc);
+     		st.setFloat(3,new_data.price);
+     		st.setInt(4,new_data.etat);
+     		st.setString(1,name_up);
+     		st.executeUpdate();
+     		System.out.println("updating of  Of data Effected");
+        }catch(Exception e){
+     	   System.out.println(e);
+        }
+     }
 	public 	ArrayList<product> getAll() {
 		
 		return products;
